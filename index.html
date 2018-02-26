@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script src="angular.min.js"></script>
+<script src="index.js"></script>
+<body>
+	<div class="box" ng-controller="ctrl1" style=" width:100px; height:100px;margin:20px auto;">
+		<table border='1' width="400" style="text-align:center">
+			<thead>
+				<tr>
+					<td><label><input ng-model="totalChecked" ng-change="all()" type="checkbox" /> 序号</label></td>
+					<td>姓名</td>
+					<td>id</td>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr ng-repeat="i in zz">
+					<td>
+						<label>
+							<input ng-model="i.checked" ng-change="only(i)" type="checkbox" />{{$index+1}}
+						</label>
+					</td>
+					<td>{{i.name}}</td>
+					<td>{{i.id}}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<button ng-click="send()">点击导出</button>
+	</div>
+</body>
+</html>
